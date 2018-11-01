@@ -1,0 +1,21 @@
+service: firebase-algolia-sync
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "secretsmanager:GetSecretValue"
+      Resource: "arn:aws:secretsmanager:us-east-1:147289267611:secret:algolia-dev-key-0scXPo"
+
+functions:
+  sync:
+    handler: handler.perform
+    events:
+      - schedule: rate(24 hours)
+      - http:
+          path: sync/all
+          method: get
+          cors: true

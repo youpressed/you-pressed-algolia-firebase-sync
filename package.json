@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "algoliasearch": "^3.30.0",
+    "aws-sdk": "^2.346.0",
+    "lodash": "^4.17.11",
+    "node-fetch": "^2.2.0"
+  }
+}
