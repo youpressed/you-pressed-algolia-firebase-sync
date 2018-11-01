@@ -7,9 +7,8 @@ let AWS = require('aws-sdk'),
     decodedBinarySecret;
 
 let algoliasearch = require('algoliasearch');
-
 let fetch = require('node-fetch');
-var _ = require('lodash');
+let _ = require('lodash');
 
 module.exports.perform = async (event, context) => {
   let client = new AWS.SecretsManager({
